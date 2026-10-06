@@ -67,7 +67,7 @@ function display_form_login($msg)
 	?>
 
     <p>Identifiez-vous !</p>
-	<form method="get" action="index.php">
+	<form method="post" action="index.php">
 		<label>Votre nom : </label>
 		<input type="text" name="username">
         <button name="login_b" type="submit">Envoyer</button>
@@ -78,7 +78,7 @@ function display_form_login($msg)
 function display_form_logout()
 {
     ?>
-    <form method="get" action="index.php">
+    <form method="post" action="index.php">
         <label>Délogguez-vous :</label>
         <button name="logout_b" type="submit">Log out !</button>
     </form>

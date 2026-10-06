@@ -2,52 +2,32 @@
 session_start();
 require_once "library.php";
 
-/*
- * nom | note 
- * Arthur : 95,
- * Bidoule : 75,
- * Chery : 45
- */
-$points = [
-	[
-		'nom'	=> 'Arthur',
-		'note'	=> 95
-	],
-	[
-		'nom'	=> 'Bidoule',
-		'note'	=> 75
-	],
-	[
-		'nom'	=> 'Chery',
-		'note'	=> 45
-	],	
-];
-
-
-
-// OUTPUT 
+// OUTPUT
 require_once "header.html";
 
 echo '<pre> GET = ';
 var_dump($_GET);
 echo '</pre>';
+echo '<pre> POST = ';
+var_dump($_POST);
+echo '</pre>';
 
 $msg ='';
 
-if( isset($_GET['logout_b']))
+if( isset($_POST['logout_b']))
 {
     // l'utilisateur a cliqué sur "logout";
     unset($_SESSION['user_identified']);
 }
 
-if( isset($_GET['login_b']) )
+if( isset($_POST['login_b']) )
 {
     // l'utilisateur se loggue, a cliqué sur "envoyer"
-    if( does_user_exist($_GET['username']) )
+    if( does_user_exist($_POST['username']) )
     {
         // login ok
         $_SESSION['user_identified'] = true;
-        $_SESSION['username'] = $_GET['username'];
+        $_SESSION['username'] = $_POST['username'];
     }
     else
     {

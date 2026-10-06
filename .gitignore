@@ -1,1 +1,7 @@
-/.idea/
+/.idea
+/.gitignore
+/.git
+cleanup_git.bat
+cleanup_git.py
+desktop.ini
+*.pptx
